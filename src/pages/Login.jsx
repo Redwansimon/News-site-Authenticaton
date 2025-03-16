@@ -5,9 +5,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 
 const Login = () => {
-    const [error , seterror]= useState({});
+    const [error , seterror]= useState("");
     const location = useLocation();
-    console.log(location)
+ 
     const navigate = useNavigate();
     const formRef = useRef();
     const { signInUser, setuser } = useContext(AuthContext);
@@ -18,7 +18,7 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password)
+       
         signInUser(email, password)
             .then((user) => {
                 setuser(user.user);
@@ -32,7 +32,7 @@ const Login = () => {
 
             })
         
-console.log(error)
+
 
 
     }
@@ -52,7 +52,7 @@ console.log(error)
                             <span className="label-text">Password</span>
                         </label>
                         <input name="password" type="password" placeholder="password" className="input input-bordered" required />
-                        {error && <label> {error} </label>}
+                        {error && <p>{error}</p>}
                         <label className="label">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>

@@ -27,6 +27,7 @@ const Register = () => {
                 updateprofile({displayName:name , photoURL:photoURL})
                 .then(()=>{
                     navigate("/")
+                    
                 })
                 .catch(error=>console.log(error))
                 

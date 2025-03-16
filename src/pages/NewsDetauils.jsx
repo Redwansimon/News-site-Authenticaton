@@ -6,8 +6,8 @@ import Navbar from "../components/Navbar"
 
 const NewsDetauils = () => {
     const data = useLoaderData();
-    const news = data.data[0];
-    console.log(news)
+    const news = data?.data?.[0];
+ 
   return (
     <div>
         <header>

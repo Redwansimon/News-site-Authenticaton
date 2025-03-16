@@ -9,7 +9,7 @@ const AuthProvider = ({children}) => {
     const [user , setuser]=useState(null);
     const [loading , setloading]= useState(true);
     
-    console.log(user ,loading);
+    
    //Newuser Registration
     const signupnewUser = (email,password)=>{
         return createUserWithEmailAndPassword(auth,email,password)
@@ -22,7 +22,9 @@ const AuthProvider = ({children}) => {
     // Logout
     const logOut=()=>{
         return signOut(auth)
-        .then(()=>{console.log("log out successfull")})
+        .then(()=>{console.log("log out successfull")
+            setloading(true)
+        })
         .catch(error=>{console.log(error)})
     }
     // Onauthchange
